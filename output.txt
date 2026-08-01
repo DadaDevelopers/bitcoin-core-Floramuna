@@ -1,0 +1,127 @@
+Assignment 1: Bitcoin Core v30 Installation Assignment
+Name: Florence Makaa
+Github: @Floramuna
+
+=====================================================================
+Task 1: Compile and run the intergration tests and share the results
+=====================================================================
+
+Compilation Status: Success
+
+Integration Test Results:
+- Bitcoin Core v30 compiled successfully using CMake.
+- The functional test suite executed successfully.
+- All required tests passed.
+
+Summary:
+Result: All Passed
+Runtime: 674 seconds
+Accumulated Test Duration: 2614 seconds
+
+Evidence:
+ALL | ✓ Passed | 2614 s (accumulated)
+Runtime: 674 s
+
+
+=================================================================================
+Task 2: Run Bitcoin core v30 and use at least 5 RPC commands and share the output
+=================================================================================
+
+Bitcoin Core Version:v30.0
+
+Network:regtest
+
+Wallet:testwallet
+
+--------------
+RPC COMMAND 1
+-------------
+
+Command:
+build/bin/bitcoin-cli -regtest getblockchaininfo
+
+Summary:
+- Chain: regtest
+- Blocks: 101
+- Headers: 101
+- Verification Progress: 100%
+- Initial Block Download: false
+- The blockchain is fully synchronized and operating correctly.
+
+--------------
+RPC COMMAND 2
+-------------
+Command:
+build/bin/bitcoin-cli -regtest getnetworkinfo
+
+Summary:
+- Version: 300000
+- Subversion: /Satoshi:30.0.0/
+- Protocol Version: 70016
+- Network Active: true
+- Connections: 0
+- Relay Fee: 0.00000100 BTC
+
+This confirms that the Bitcoin node is running successfully on the regtest network.
+
+--------------
+RPC COMMAND 3
+--------------
+
+Command:
+build/bin/bitcoin-cli -regtest getmininginfo
+
+Summary:
+- Blocks: 101
+- Difficulty: 4.656542373906925e-10
+- Current Block Transactions: 0
+- Next Block Height: 102
+
+This confirms that mining is functioning correctly on the regtest network.
+
+-------------
+RPC COMMAND 4
+-------------
+
+Command:
+build/bin/bitcoin-cli -regtest -rpcwallet=testwallet getwalletinfo
+
+Summary:
+- Wallet Name: testwallet
+- Wallet Format: sqlite
+- Transaction Count: 101
+- Descriptor Wallet: true
+- Private Keys Enabled: true
+- Wallet synchronized to block height 101
+
+This confirms that the wallet was created successfully and is operating normally.
+
+-------------
+RPC COMMAND 5
+-------------
+
+Command:
+build/bin/bitcoin-cli -regtest -rpcwallet=testwallet listtransactions
+
+Summary:
+The command successfully displayed the wallet transaction history.
+
+The output contained:
+- Generated mining reward transactions
+- Wallet addresses
+- Transaction IDs (TXIDs)
+- Block hashes
+- Confirmation counts
+- Coinbase rewards currently marked as immature until additional confirmations are reached
+
+This confirms that the wallet is recording and retrieving blockchain transactions successfully.
+
+----------
+CONCLUSION
+----------
+
+Bitcoin Core v30.0 was successfully compiled and executed on the regtest network.
+
+A regtest node was started successfully, a wallet named "testwallet" was created, 101 blocks were mined, and the required five RPC commands were executed successfully.
+
+The outputs confirm that the blockchain, wallet, mining subsystem, networking, and RPC interface are all functioning correctly.
